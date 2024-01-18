@@ -5,7 +5,7 @@ sudo apt-get update
 sudo apt-get upgrade -y
 
 # Installer des paquets utiles pour Ubuntu
-sudo apt-get install -y ubuntu-restricted-extras build-essential curl git htop python3-pip vim nano
+sudo apt-get install -y ubuntu-restricted-extras build-essential curl git htop python3-pip vim nano tree
 
 # Installer des paquets utiles pour le développement et les bibliothèques
 sudo apt-get install -y build-essential curl git htop python3-pip python3-dev python3-venv libssl-dev libffi-dev zlib1g-dev \
