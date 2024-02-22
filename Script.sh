@@ -15,6 +15,8 @@ libglfw3 libgl1-mesa-dev libglu1-mesa-dev libzmq3-dev libtbb-dev libtiff-dev lib
 libavformat-dev libswscale-dev libv4l-dev libx264-dev libxvidcore-dev libcanberra-gtk-module libcanberra-gtk3-module libsm6 \
 libxext6 libxrender-dev build-essential git ruby ruby-dev libpcap-dev libpq-dev zlib1g-dev libffi-dev libgmp-dev
 
+sudo apt install -y curl gpgv2 autoconf bison build-essential git-core libapr1 libaprutil1 libcurl4-openssl-dev libgmp3-dev libpcap-dev libpq-dev libreadline6-dev libsqlite3-dev libssl-dev libsvn1 libtool libxml2 libxml2-dev libxslt-dev libyaml-dev locate ncurses-dev openssl postgresql postgresql-contrib wget xsel zlib1g zlib1g-dev
+
 # Installer Python 3 et pip
 sudo apt-get install -y python3 python3-pip
 
@@ -43,4 +45,15 @@ sudo apt-get install -y remmina
 sudo apt-get autoremove -y
 sudo apt-get autoclean -y
 
-echo "Installation terminée !"
+echo "Installation des outils de base"
+
+
+cd ~
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
+chmod 755 msfinstall && \
+./msfinstall
+
+echo "Installation de msfconsole finish"
+
+
+
