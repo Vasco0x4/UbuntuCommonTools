@@ -1,12 +1,12 @@
 #!/bin/bash
 
-echo "Début de la mise à jour et de l'installation des paquets..."
+echo "Starting package update and installation..."
 
-# Mettre à jour les paquets
+# Update packages
 sudo apt-get update
 sudo apt-get upgrade -y
 
-# Installer des paquets utiles pour Ubuntu et des bibliothèques de développement
+# Install useful packages for Ubuntu and development libraries
 sudo apt-get install -y ubuntu-restricted-extras build-essential curl git htop python3-pip vim nano tree \
 python3-dev python3-venv libssl-dev libffi-dev zlib1g-dev libxml2-dev libxslt1-dev libjpeg-dev libpq-dev \
 libmysqlclient-dev libsqlite3-dev libfreetype6-dev libblas-dev liblapack-dev libatlas-base-dev libhdf5-dev \
@@ -17,30 +17,30 @@ libsm6 libxext6 libxrender-dev build-essential git ruby ruby-dev libpcap-dev lib
 curl gpgv2 autoconf bison git-core libapr1 libaprutil1 libgmp3-dev libpcap-dev libreadline6-dev libsqlite3-dev \
 libsvn1 libtool libxml2 libyaml-dev locate ncurses-dev openssl postgresql postgresql-contrib wget xsel
 
-# Installer Visual Studio Code, Discord, Telegram, et Remmina
+# Install Visual Studio Code, Discord, Telegram, and Remmina
 sudo snap install --classic code
 sudo snap install discord telegram-desktop
 sudo apt-get install -y remmina
 
-# Installer Node.js, npm, Java (OpenJDK), VirtualBox
+# Install Node.js, npm, Java (OpenJDK), VirtualBox
 sudo apt-get install -y nodejs npm default-jdk virtualbox
 
-# Nettoyage final
+# Final cleanup
 sudo apt-get autoremove -y
 sudo apt-get autoclean -y
-echo "Installation des outils de base terminée."
+echo "Basic tools installation completed."
 
-echo "Installation des outils de tests de pénétration..."
-# Installer des outils de tests de pénétration
+echo "Installing penetration testing tools..."
+# Install penetration testing tools
 sudo apt-get install -y nmap wireshark john hydra sqlmap aircrack-ng snort fail2ban tcpdump netcat nbtscan onesixtyone nikto
 
-# Installer Metasploit
+# Install Metasploit
 cd ~
 if [ ! -f msfinstall ]; then
     curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
     chmod 755 msfinstall
     ./msfinstall
-    echo "Installation de Metasploit terminée."
+    echo "Metasploit installation completed."
 else
-    echo "Le script d'installation de Metasploit est déjà présent."
+    echo "Metasploit installation script is already present."
 fi
