@@ -14,7 +14,7 @@ libopenblas-dev liblapacke-dev libboost-all-dev libcurl4-openssl-dev libgtk-3-de
 libgl1-mesa-dev libglu1-mesa-dev libzmq3-dev libtbb-dev libtiff-dev libjpeg-turbo8-dev libpng-dev libavcodec-dev \
 libavformat-dev libswscale-dev libv4l-dev libx264-dev libxvidcore-dev libcanberra-gtk-module libcanberra-gtk3-module \
 libsm6 libxext6 libxrender-dev build-essential git ruby ruby-dev libpcap-dev libpq-dev zlib1g-dev libffi-dev libgmp-dev \
-curl gpgv2 autoconf bison git-core libapr1 libaprutil1 libgmp3-dev libpcap-dev libreadline6-dev libsqlite3-dev \
+curl gpgv2 autoconf bison git-core libapr1 libaprutil1 libpcap-dev libreadline-dev libsqlite3-dev \
 libsvn1 libtool libxml2 libyaml-dev locate ncurses-dev openssl postgresql postgresql-contrib wget xsel
 
 # Install Visual Studio Code, Discord, Telegram, and Remmina
