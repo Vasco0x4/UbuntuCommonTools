@@ -32,7 +32,7 @@ echo "Basic tools installation completed."
 
 echo "Installing penetration testing tools..."
 # Install penetration testing tools
-sudo apt-get install -y nmap wireshark john hydra sqlmap aircrack-ng snort fail2ban tcpdump nbtscan onesixtyone nikto
+sudo apt-get install -y nmap wireshark john hydra sqlmap aircrack-ng snort fail2ban tcpdump nbtscan onesixtyone nikto hashcat 
 
 # Install Metasploit
 cd ~
