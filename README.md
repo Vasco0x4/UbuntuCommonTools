@@ -15,7 +15,7 @@ This Bash script automates the installation of various packages and tools useful
 To use this script, simply clone the repository and run the script as follows:
 
 ``` bash
-git clone https://github.com/yourusername/UbuntuCommonTools.git
+git clone https://github.com/Vasco0x4/UbuntuCommonTools.git
 ```
 ```bash
 cd UbuntuCommonTools
