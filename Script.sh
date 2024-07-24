@@ -15,7 +15,7 @@ libgl1-mesa-dev libglu1-mesa-dev libzmq3-dev libtbb-dev libtiff-dev libjpeg-turb
 libavformat-dev libswscale-dev libv4l-dev libx264-dev libxvidcore-dev libcanberra-gtk-module libcanberra-gtk3-module \
 libsm6 libxext6 libxrender-dev build-essential git ruby ruby-dev libpcap-dev libpq-dev zlib1g-dev libffi-dev libgmp-dev \
 curl gpgv2 autoconf bison git-core libapr1 libaprutil1 libpcap-dev libreadline-dev libsqlite3-dev \
-libsvn1 libtool libxml2 libyaml-dev locate ncurses-dev openssl postgresql postgresql-contrib wget xsel
+libsvn1 libtool libxml2 libyaml-dev locate ncurses-dev openssl postgresql postgresql-contrib wget xsel fuse
 
 # Install Visual Studio Code, Discord, Telegram, and Remmina
 sudo snap install --classic code
