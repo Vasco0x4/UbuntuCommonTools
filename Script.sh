@@ -23,7 +23,7 @@ sudo snap install discord telegram-desktop
 sudo apt-get install -y remmina
 
 # Install Node.js, npm, Java (OpenJDK), VirtualBox
-sudo apt-get install -y nodejs npm default-jdk virtualbox
+sudo apt-get install -y nodejs npm default-jdk virtualbox netdiscover
 
 # Final cleanup
 sudo apt-get autoremove -y
