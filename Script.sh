@@ -23,7 +23,7 @@ sudo snap install discord telegram-desktop
 sudo apt-get install -y remmina
 
 # Install Node.js, npm, Java (OpenJDK), VirtualBox
-sudo apt-get install -y nodejs npm default-jdk virtualbox netdiscover
+sudo apt-get install -y nodejs npm default-jdk virtualbox 
 
 # Final cleanup
 sudo apt-get autoremove -y
@@ -32,7 +32,7 @@ echo "Basic tools installation completed."
 
 echo "Installing penetration testing tools..."
 # Install penetration testing tools
-sudo apt-get install -y nmap wireshark john hydra sqlmap aircrack-ng snort fail2ban tcpdump nbtscan onesixtyone nikto hashcat 
+sudo apt-get install -y nmap wireshark john hydra sqlmap aircrack-ng snort fail2ban tcpdump nbtscan onesixtyone nikto hashcat netdiscover
 
 # Install Metasploit
 cd ~
