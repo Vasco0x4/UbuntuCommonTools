@@ -1,40 +1,52 @@
 #!/bin/bash
 
+# ================================================================
+# Script to install a wide range of cybersecurity tools on Ubuntu
+# ================================================================
+
 echo "Starting package update and installation..."
 
-# Update packages
+# Update system packages
 sudo apt-get update
 sudo apt-get upgrade -y
 
-# Install useful packages for Ubuntu and development libraries
-sudo apt-get install -y ubuntu-restricted-extras build-essential curl git htop python3-pip vim nano tree \
-python3-dev python3-venv libssl-dev libffi-dev zlib1g-dev libxml2-dev libxslt1-dev libjpeg-dev libpq-dev \
-libmysqlclient-dev libsqlite3-dev libfreetype6-dev libblas-dev liblapack-dev libatlas-base-dev libhdf5-dev \
-libopenblas-dev liblapacke-dev libboost-all-dev libcurl4-openssl-dev libgtk-3-dev libglfw3-dev libglfw3 \
-libgl1-mesa-dev libglu1-mesa-dev libzmq3-dev libtbb-dev libtiff-dev libjpeg-turbo8-dev libpng-dev libavcodec-dev \
-libavformat-dev libswscale-dev libv4l-dev libx264-dev libxvidcore-dev libcanberra-gtk-module libcanberra-gtk3-module \
-libsm6 libxext6 libxrender-dev build-essential git ruby ruby-dev libpcap-dev libpq-dev zlib1g-dev libffi-dev libgmp-dev \
-curl gpgv2 autoconf bison git-core libapr1 libaprutil1 libpcap-dev libreadline-dev libsqlite3-dev \
-libsvn1 libtool libxml2 libyaml-dev locate ncurses-dev openssl postgresql postgresql-contrib wget xsel fuse
+# Install essential packages for Ubuntu and development libraries
+sudo apt-get install -y curl git htop python3-pip vim nano tree \
+python3-dev python3-venv libssl-dev libffi-dev zlib1g-dev \
+libpcap-dev libpq-dev libsqlite3-dev libcurl4-openssl-dev \
+build-essential ruby ruby-dev autoconf bison libpcap-dev \
+libreadline-dev libxml2-dev locate ncurses-dev openssl \
+postgresql postgresql-contrib wget xsel fuse
 
-# Install Visual Studio Code, Discord, Telegram, and Remmina
+# Install some useful non-security tools for productivity
 sudo snap install --classic code
 sudo snap install discord telegram-desktop
 sudo apt-get install -y remmina
 
-# Install Node.js, npm, Java (OpenJDK), VirtualBox
-sudo apt-get install -y nodejs npm default-jdk virtualbox 
+# Install Node.js, npm, Java (OpenJDK), and VirtualBox
+sudo apt-get install -y nodejs npm default-jdk virtualbox
 
-# Final cleanup
-sudo apt-get autoremove -y
-sudo apt-get autoclean -y
-echo "Basic tools installation completed."
+# Install common security tools
+echo "Installing common security tools..."
 
-echo "Installing penetration testing tools..."
 # Install penetration testing tools
-sudo apt-get install -y nmap wireshark john hydra sqlmap aircrack-ng snort fail2ban tcpdump nbtscan onesixtyone nikto hashcat netdiscover timeshift
+sudo apt-get install -y nmap wireshark john hydra sqlmap aircrack-ng snort fail2ban tcpdump nbtscan onesixtyone nikto hashcat netdiscover
 
-# Install Metasploit
+# Install additional tools for web application testing and exploitation
+sudo apt-get install -y burpsuite recon-ng dirbuster gobuster theharvester wpscan whatweb
+
+# Install reverse engineering and malware analysis tools
+sudo apt-get install -y radare2 ghidra volatility
+
+# Install for wireless penetration testing
+sudo apt-get install -y reaver pixiewps
+
+# Install Docker for containerized environments and testing
+sudo apt-get install -y docker.io docker-compose
+
+# Install Metasploit Framework
+echo "Installing Metasploit Framework..."
+
 cd ~
 if [ ! -f msfinstall ]; then
     curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
@@ -44,3 +56,33 @@ if [ ! -f msfinstall ]; then
 else
     echo "Metasploit installation script is already present."
 fi
+
+# Install additional specialized tools
+echo "Installing specialized cybersecurity tools..."
+
+# Web application vulnerability scanners
+sudo apt-get install -y nikto wpscan gobuster
+
+# Exploit development and testing tools
+sudo apt-get install -y exploitdb patator
+
+# Other penetration testing tools
+sudo apt-get install -y zaproxy ettercap-ng hydra
+
+# Install Burp Suite (community edition)
+echo "Installing Burp Suite..."
+sudo snap install burp-suite
+
+# Install the latest version of Kali Linux tools using Kali repositories (optional)
+echo "Installing additional Kali tools..."
+
+echo "Installing Kali Linux tools package..."
+sudo apt install -y kali-linux-all
+
+# Clean up any unnecessary packages
+echo "Cleaning up system..."
+
+sudo apt-get autoremove -y
+sudo apt-get autoclean -y
+
+echo "Cybersecurity tools installation completed."
